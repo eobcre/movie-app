@@ -1,3 +1,5 @@
+import '../scss/_header.scss';
+
 type HeaderProps = {
   text: string;
 };

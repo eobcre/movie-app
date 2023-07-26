@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$bg-color: #353640;
+
+html,
+body {
+  background-color: $bg-color;
+}

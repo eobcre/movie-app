@@ -1,4 +1,5 @@
 import '../scss/_header.scss';
+import Logo from '../assets/logo.png';
 
 type HeaderProps = {
   text: string;
@@ -7,7 +8,7 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = (props) => {
   return (
     <header>
-      <h1>{props.text}</h1>
+      <img src={Logo} alt='Logo' width={400} />
     </header>
   );
 };

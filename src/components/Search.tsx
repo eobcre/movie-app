@@ -2,13 +2,15 @@ import { useState } from 'react';
 import '../scss/_search.scss';
 import { BiSearch } from 'react-icons/bi';
 
-const Search = () => {
+const Search: React.FC = () => {
   const [search, setSearch] = useState<string>('');
 
   const handleOnChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = e.target.value;
-    setSearch(inputValue);
-    console.log(inputValue);
+    setSearch(e.target.value);
+  };
+
+  const handleOnClickButton = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
   };
 
   return (
@@ -20,7 +22,7 @@ const Search = () => {
           value={search}
           className='search-input'
         />
-        <button className='search-button'>
+        <button onClick={handleOnClickButton} className='search-button'>
           <BiSearch className='search-icon' />
         </button>
       </div>

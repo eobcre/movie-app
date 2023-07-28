@@ -4,7 +4,7 @@ import Search from './components/Search/Search';
 const App: React.FC = () => {
   return (
     <>
-      <Header text='Movie App' />
+      <Header />
       <Search />
     </>
   );

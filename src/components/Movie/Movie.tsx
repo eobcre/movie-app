@@ -1,12 +1,13 @@
 import '../Movie/Movie.scss';
 
-// type
+// state movies type
 type Movie = {
   Title: string;
   Year: string;
   Poster: string;
 };
 
+// props movie type
 type MovieProps = {
   movie: Movie;
 };

@@ -1,16 +1,31 @@
 import { useState } from 'react';
+
 import '../Search/Search.scss';
 import { BiSearch } from 'react-icons/bi';
 
-const Search: React.FC = () => {
-  const [search, setSearch] = useState<string>('');
+// searchFunc function and parameter type
+type SearchProps = {
+  searchFunc: (searchQuery: string) => void;
+};
 
+const Search: React.FC<SearchProps> = ({ searchFunc }) => {
+  const [searchValue, setSearchValue] = useState<string>('');
+
+  // input onChange logic
   const handleOnChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
+    setSearchValue(e.target.value);
   };
 
+  // reset logic
+  const reset = () => {
+    setSearchValue('');
+  };
+
+  // button onClick logic
   const handleOnClickButton = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    searchFunc(searchValue);
+    reset();
   };
 
   return (
@@ -19,7 +34,7 @@ const Search: React.FC = () => {
         <input
           type='text'
           onChange={handleOnChangeInput}
-          value={search}
+          value={searchValue}
           className='search-input'
         />
         <button onClick={handleOnClickButton} className='search-button'>

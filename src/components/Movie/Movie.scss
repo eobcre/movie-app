@@ -1,3 +1,11 @@
+@use '../../scss/base' as b;
+
 .movie-container {
   margin: 50px 0;
+}
+
+p {
+  color: b.$white;
+  text-align: center;
+  margin: 10px;
 }

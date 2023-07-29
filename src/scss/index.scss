@@ -10,3 +10,11 @@ html,
 body {
   background-color: b.$dark-gray;
 }
+
+.movies {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 30px;
+}

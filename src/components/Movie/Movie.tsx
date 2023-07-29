@@ -1,5 +1,6 @@
 import '../Movie/Movie.scss';
 
+// type
 type Movie = {
   Title: string;
   Year: string;

@@ -4,7 +4,9 @@ import Logo from '../../assets/logo.png';
 const Header: React.FC = () => {
   return (
     <header>
-      <img src={Logo} alt='Logo' width={180} />
+      <a href='./'>
+        <img src={Logo} alt='Logo' width={180} />
+      </a>
     </header>
   );
 };

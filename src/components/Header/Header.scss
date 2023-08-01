@@ -1,3 +1,5 @@
+@use '../../scss/breakpoints' as b;
+
 header {
   display: flex;
   justify-content: space-between;

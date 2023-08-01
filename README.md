@@ -8,7 +8,7 @@ rel='noopener noreferrer'>Live Demo</a>
 - TypeScript
 - Sass
 - react-icons
-- OMDB API
+- OMDb API
 - Heroku
 
 ## Run Locally

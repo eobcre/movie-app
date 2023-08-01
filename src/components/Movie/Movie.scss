@@ -1,11 +1,11 @@
-@use '../../scss/base' as b;
+@use '../../scss/colors' as c;
 
 .movie-container {
   margin: 50px 0;
 }
 
 p {
-  color: b.$white;
+  color: c.$white;
   text-align: center;
   margin: 10px;
 }

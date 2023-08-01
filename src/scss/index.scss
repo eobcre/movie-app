@@ -1,4 +1,4 @@
-@use './base' as b;
+@use './colors' as c;
 
 * {
   margin: 0;
@@ -9,7 +9,7 @@
 
 html,
 body {
-  background-color: b.$dark-gray;
+  background-color: c.$purple;
 }
 
 .movies {
@@ -21,6 +21,6 @@ body {
 }
 
 .loading-text {
-  color: b.$white;
+  color: c.$white;
   margin-top: 130px;
 }

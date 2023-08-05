@@ -2,10 +2,12 @@
 
 .container-dark {
   background-color: c.$dark-theme-background-color;
+  min-height: 100vh;
 }
 
 .container-light {
   background-color: c.$light-theme-background-color;
+  min-height: 100vh;
 }
 
 .icon-light {

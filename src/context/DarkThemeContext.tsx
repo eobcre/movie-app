@@ -1,15 +1,20 @@
 import { createContext, useState } from 'react';
 
-type Props = {
+type ContextType = {
+  isDark: boolean;
+  setIsDark: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+type PropsType = {
   children: React.ReactNode;
 };
 
 // create context
-const DarkThemeContext = createContext();
+const DarkThemeContext = createContext<ContextType | null>(null);
 
 // create provider
-const DarkThemeProvider: React.FC<Props> = ({ children }) => {
-  const [isDark, setIsDark] = useState(false);
+const DarkThemeProvider: React.FC<PropsType> = ({ children }) => {
+  const [isDark, setIsDark] = useState<boolean>(false);
 
   return (
     <>

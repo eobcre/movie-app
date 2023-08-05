@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
+import {
+  DarkThemeContext,
+  DarkThemeProvider,
+} from './context/DarkThemeContext';
 
 import Header from './components/Header/Header';
 import Search from './components/Search/Search';
 import Movie from './components/Movie/Movie';
+import Switch from './components/Switch';
 
 const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -47,21 +52,30 @@ const App: React.FC = () => {
   };
 
   return (
-    <>
-      <Header />
-      <Search searchFunc={searchFunc} />
-      <div className='movies'>
-        {loading && !errorMessage ? (
-          <span className='loading-text'>Loading...</span>
-        ) : !loading && errorMessage ? (
-          <p>{errorMessage}</p>
-        ) : (
-          movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie} />
-          ))
+    <DarkThemeProvider>
+      <DarkThemeContext.Consumer>
+        {(context) => (
+          <div
+            className={context?.isDark ? `container-dark` : `container-light`}
+          >
+            <Header />
+            <Switch />
+            <Search searchFunc={searchFunc} />
+            <div className='movies'>
+              {loading && !errorMessage ? (
+                <span className='loading-text'>Loading...</span>
+              ) : !loading && errorMessage ? (
+                <p>{errorMessage}</p>
+              ) : (
+                movies.map((movie, index) => (
+                  <Movie key={`${index}-${movie.Title}`} movie={movie} />
+                ))
+              )}
+            </div>
+          </div>
         )}
-      </div>
-    </>
+      </DarkThemeContext.Consumer>
+    </DarkThemeProvider>
   );
 };
 

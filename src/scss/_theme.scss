@@ -1,0 +1,22 @@
+@use './colors' as c;
+
+.container-dark {
+  background-color: c.$dark-theme-background-color;
+}
+
+.container-light {
+  background-color: c.$light-theme-background-color;
+}
+
+.icon-light {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: c.$light-theme-color;
+  font-size: 38px;
+}
+
+.icon-dark {
+  @extend .icon-light;
+  color: c.$dark-theme-color;
+}

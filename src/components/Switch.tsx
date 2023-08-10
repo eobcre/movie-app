@@ -22,9 +22,9 @@ const Switch: React.FC = () => {
     <div>
       <div onClick={handleSwitch}>
         {isDark ? (
-          <TiWeatherSunny className='icon-light' />
+          <TiWeatherSunny className='switch-light' />
         ) : (
-          <TiWeatherNight className='icon-dark' />
+          <TiWeatherNight className='switch-dark' />
         )}
       </div>
     </div>

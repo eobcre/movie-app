@@ -1,24 +1,24 @@
 @use './colors' as c;
 
 .container-dark {
-  background-color: c.$dark-theme-background-color;
+  background-color: c.$dark-theme-color;
   min-height: 100vh;
 }
 
 .container-light {
-  background-color: c.$light-theme-background-color;
+  background-color: c.$light-theme-color;
   min-height: 100vh;
 }
 
-.icon-light {
+.switch-light {
   position: absolute;
   top: 20px;
   right: 20px;
-  color: c.$light-theme-color;
+  color: c.$light-theme-switch-color;
   font-size: 38px;
 }
 
-.icon-dark {
-  @extend .icon-light;
-  color: c.$dark-theme-color;
+.switch-dark {
+  @extend .switch-light;
+  color: c.$dark-theme-switch-color;
 }

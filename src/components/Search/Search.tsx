@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { DarkThemeContext } from '../../context/DarkThemeContext';
 
 import '../Search/Search.scss';
 import { BiSearch } from 'react-icons/bi';
@@ -10,6 +11,15 @@ type SearchProps = {
 
 const Search: React.FC<SearchProps> = ({ searchFunc }) => {
   const [searchValue, setSearchValue] = useState<string>('');
+
+  const ThemeContext = useContext(DarkThemeContext);
+
+  // null check
+  if (!ThemeContext) {
+    throw new Error('DarkThemeContext is null.');
+  }
+
+  const { isDark } = ThemeContext;
 
   // input onChange logic
   const handleOnChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,7 +48,9 @@ const Search: React.FC<SearchProps> = ({ searchFunc }) => {
           className='search-input'
         />
         <button onClick={handleOnClickButton} className='search-button'>
-          <BiSearch className='search-icon' />
+          <BiSearch
+            className={isDark ? `search-icon-dark` : `search-icon-light`}
+          />
         </button>
       </div>
     </form>
